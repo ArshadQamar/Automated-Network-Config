@@ -76,10 +76,40 @@ for index, sm in enumerate(subnet):
 net_prefer=driver.find_element(By.ID, "ip_network_pref2")
 net_prefer.click()
 
+
+#Defining the 1st interface ids
+ip_1a=driver.find_element(By.ID,"ip_network_ip1a")
+ip_1b=driver.find_element(By.ID,"ip_network_ip1b")
+ip_1c=driver.find_element(By.ID,"ip_network_ip1c")
+ip_1d=driver.find_element(By.ID,"ip_network_ip1d")
+
+gw_1a=driver.find_element(By.ID,"ip_network_gw1a")
+gw_1b=driver.find_element(By.ID,"ip_network_gw1b")
+gw_1c=driver.find_element(By.ID,"ip_network_gw1c")
+gw_1d=driver.find_element(By.ID,"ip_network_gw1d")
+
+sm_1a=driver.find_element(By.ID,"ip_network_sm1a")
+sm_1b=driver.find_element(By.ID,"ip_network_sm1b")
+sm_1c=driver.find_element(By.ID,"ip_network_sm1c")
+sm_1d=driver.find_element(By.ID,"ip_network_sm1d")
+
+data_ip_1 = [ip_1a, ip_1b, ip_1c, ip_1d]
+gw_ip_1 = [gw_1a, gw_1b, gw_1c, gw_1d]
+sm_ip_1 = [sm_1a, sm_1b, sm_1c, sm_1d]
+
+for index, ip in enumerate(data_ip_1):
+    ip.clear()  # Clear existing value
+
+for index, ip in enumerate(gw_ip_1):
+    ip.clear()  # Clear existing value
+
+for index, ip in enumerate(sm_ip_1):
+    ip.clear()
+
+
 #submitting the changes
 submit=driver.find_element(By.ID, "ipinp_send_btn")
 submit.click()
-time.sleep(30)
 
 #rebooting Pal
 reboot_url = "http://10.235.11.27/cgi-bin/xload.cgi?R=0317012"
