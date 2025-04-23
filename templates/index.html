@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Palomino Automated Script</title>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th, td {
+            border: 1px solid black;
+            padding: 8px;
+            text-align: center;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        h2 {
+            text-align: center;
+        }
+
+        .container {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .column {
+            width: 48%;
+        }
+    </style>
+</head>
+<body>
+    <h1>Device Control Panel</h1>
+    <div class="container">
+        <!-- Mardan PAL Section -->
+        <div class="column">
+            <h2>Mardan PAL</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Device Name</th>
+                        <th>IP Address</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Mardan PAL 1</td>
+                        <td>10.235.11.21</td>
+                        <td>
+                            <form action="/run_script" method="post">
+                                <input type="hidden" name="device_ip" value="10.235.11.21">
+                                <button type="submit">Switch</button>
+                            </form>
+                        </td>
+                    </tr>
+
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Haripur PAL Section -->
+        <div class="column">
+            <h2>Haripur PAL</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Device Name</th>
+                        <th>IP Address</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                    <tr>
+                        <td>Haripur PAL 11</td>
+                        <td>10.233.11.30</td>
+                        <td>
+                            <form action="/run_script" method="post">
+                                <input type="hidden" name="device_ip" value="10.233.11.30">
+                                <button type="submit">Switch</button>
+                            </form>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+</html>
